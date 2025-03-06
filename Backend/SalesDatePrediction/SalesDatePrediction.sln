@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesDatePrediction", "SalesDatePrediction\SalesDatePrediction.csproj", "{13D6B1C7-B38E-4ECB-8864-D7DC88BF5186}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13D6B1C7-B38E-4ECB-8864-D7DC88BF5186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D6B1C7-B38E-4ECB-8864-D7DC88BF5186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13D6B1C7-B38E-4ECB-8864-D7DC88BF5186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13D6B1C7-B38E-4ECB-8864-D7DC88BF5186}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AAB6A454-B51E-460E-A88D-D940E6FA78EC}
+	EndGlobalSection
+EndGlobal
