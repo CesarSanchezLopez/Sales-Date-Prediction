@@ -15,6 +15,8 @@
           <th>Required Date</th>
           <th>Shipped Date</th>
           <th>Ship Name</th>
+          <th>Ship Adress</th>
+          <th>Ship City</th>
           <!-- <th>Action</th> -->
         </tr>
       </thead>
@@ -26,6 +28,8 @@
           <td>{{ order.requiredDate | date }}</td>
           <td>{{ order.shippedDate | date }}</td>
           <td>{{ order.shipName }}</td>
+          <td>{{ order.shipAddress }}</td>
+          <td>{{ order.shipCity }}</td>
           <!-- <td><a [routerLink]="['/order/create', order.orderId]">Create Order Detail</a></td> -->
         </tr>
        

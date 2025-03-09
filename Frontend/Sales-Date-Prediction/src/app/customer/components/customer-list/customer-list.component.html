@@ -41,13 +41,13 @@
         <td>{{ customer.nextPredictedOrder }}</td>
         <td></td>
         <td>
-          <span class="ml-1 vertical-align-middle cursor-pointer">
-            <a class="primary" [routerLink]="['../order', customer.custId,customer.customerName]">Orders</a>
+          <span class="ml-1 vertical-align-middle cursor-pointer font-color-primary">
+            <a class="primary font-color-primary" [routerLink]="['../order', customer.custId,customer.customerName]">VIEW ORDERS</a>
           </span>
         </td>
         <td>
             <span class="ml-1 vertical-align-middle cursor-pointer">
-              <a class="primary" [routerLink]="['../order/create', customer.custId,customer.customerName]">New</a>
+              <a class="primary" [routerLink]="['../order/create', customer.custId,customer.customerName]">NEW ORDER</a>
               <!-- <a class="primary" [routerLink]="['../order/create']">New</a> -->
             </span>
           </td>
