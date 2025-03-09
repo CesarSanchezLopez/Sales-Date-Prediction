@@ -5,7 +5,7 @@
 
 1. **Clonar el repositorio**:
 
-   git clone https://github.com/tu_usuario/tu_repositorio.git
+   git clone https://github.com/CesarSanchezLopez/Sales-Date-Prediction/
    
    cd tu_repositorio
    
@@ -27,7 +27,9 @@
     api: 'https://localhost:7070/api',
   };
   
-  
+ 5. Graficando con D3 
+    \Sales-Date-Prediction\Frontend\d3
+     
 ************Backend .Net 7******************
 
   
