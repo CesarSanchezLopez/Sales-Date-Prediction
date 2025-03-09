@@ -4,7 +4,9 @@
        
 <div class="order-list">
     <h2>Order List</h2>
+    <th class="" >{{customerName}} </th>
     <table class="table table-striped table-bordered table-hover table-sm table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
+      
         <thead class="thead-dark ">
         <tr>
           <th>Order ID</th>
@@ -26,10 +28,11 @@
           <td>{{ order.shipName }}</td>
           <!-- <td><a [routerLink]="['/order/create', order.orderId]">Create Order Detail</a></td> -->
         </tr>
-        <pagination-controls (pageChange)="q = $event"></pagination-controls>
+       
       </tbody>
       
     </table>
+    <pagination-controls (pageChange)="q = $event"></pagination-controls>
     <button class="btn btn-primary" (click)="goBack()">Back</button>
   </div>
 </div>

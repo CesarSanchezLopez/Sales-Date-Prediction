@@ -14,6 +14,7 @@ export class FormOrderComponent implements OnInit {
   orderForm!: FormGroup;
   orderDetailsForm!: FormGroup;
   cusId: any;
+  customerName: any;
   routeSub: any;
 
   listEmployes: { empId: number, fullName: string }[] = [];
@@ -36,7 +37,8 @@ export class FormOrderComponent implements OnInit {
 
     this.routeSub = this.route.params.subscribe((params) => {
       this.cusId = params['custId'];
-      console.log("Prr:"+this.cusId);
+      this.customerName= params['customerName'];
+      console.log("Prr:"+this.customerName);
      
      });
 
@@ -49,10 +51,7 @@ export class FormOrderComponent implements OnInit {
       listEmployes: ["", Validators.required],
       listShipper: ["", Validators.required],
       listProduct: ["", Validators.required],
-      //orderId: ['', Validators.required],
-     // custId: [null, [Validators.required, Validators.min(1)]],
     
-      //shipperId: [null, Validators.required],
       orderDate: [null, Validators.required],
       requiredDate: [null, Validators.required],
       shippedDate: [null, Validators.required],
@@ -61,22 +60,13 @@ export class FormOrderComponent implements OnInit {
       shipAddress: ['', Validators.required],
       shipCity: ['', Validators.required],
       shipCountry: ['', Validators.required],
-      //shipRegion: ['', Validators.required],
-      //shipPostalCode: ['', [Validators.required, Validators.pattern('^[0-9]{5}$')]], // Example for postal code pattern
-      //Detalle
-     // productId: [null, [Validators.required, Validators.min(1)]],
+
       unitPrice: [null, [Validators.required, Validators.min(0)]],
       qty: [null, [Validators.required, Validators.min(1)]],
       discount: [null, [Validators.required, Validators.min(0)]], // Discount should be between 0 and 1 (0-100%)
     });
 
-    // this.orderDetailsForm = this.fb.group({
-    //   orderId: ['', Validators.required],
-   
-    //   unitPrice: [null, [Validators.required, Validators.min(0)]],
-    //   qty: [null, [Validators.required, Validators.min(1)]],
-    //   discount: [null, [Validators.required, Validators.min(0), Validators.max(1)]], // Discount should be between 0 and 1 (0-100%)
-    // });
+
   }
 
   async loadList() {
@@ -88,28 +78,8 @@ export class FormOrderComponent implements OnInit {
       this.listProduct= res[2];
     });
     
-    // this["perfilesService"].getProfiles().subscribe((res: any) => {
-     
-    //   this.profiles = res;
-    // });
   }
 
-  // onSubmit(): void {
-  //   //if (this.orderForm.invalid || this.orderDetailsForm.invalid) {
-  //   console.log("SIII");
-  //   if (this.orderForm.invalid) {
-  //     console.log('Form is invalid');
-  //     return;
-  //   }
-
-  //   const order: IOrder = this.orderForm.value;
-  //   //const orderDetail: IOrderDetail = this.orderDetailsForm.value;
-
-  //   console.log('Order:', order);
-   
-
-  //   // Handle the form submission logic here (e.g., send to a server)
-  // }
 
   addOrder() {
     console.log(this.orderForm);

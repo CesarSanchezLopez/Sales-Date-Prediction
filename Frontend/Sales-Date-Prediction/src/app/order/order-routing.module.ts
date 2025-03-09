@@ -5,12 +5,10 @@ import { OrderCreateComponent } from './create/create.component';
 import { FormOrderComponent } from './form-order/form-order.component';
 
 const routes: Routes = [
-  { path: 'order/:custId', component: OrderListComponent },
+  { path: 'order/:custId/:customerName', component: OrderListComponent },
    { path: 'order/create', component: FormOrderComponent },
    { path: 'order/create/:custId', component: FormOrderComponent },
-  // { path: 'order/create', component: FormOrderComponent },
-  // { path: 'order/create/:orderId', component: FormOrderComponent },
-  //{ path: 'order/create', component: FormOrderComponent } 
+   { path: 'order/create/:custId/:customerName', component: FormOrderComponent },
 ];
 
 @NgModule({

@@ -42,6 +42,7 @@ import { Location } from '@angular/common';
 export class OrderListComponent implements OnInit {
   orders: IOrder[] = [];
   cusId: any;
+  customerName: any;
   routeSub: any;
   q: number = 1;
   page: number = 1;
@@ -57,6 +58,7 @@ export class OrderListComponent implements OnInit {
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe((params) => {
        this.cusId = params["custId"];
+       this.customerName= params["customerName"];
         console.log("id::"+ this.cusId);
        this.loadData(this.cusId);
       });

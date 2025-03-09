@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination'; 
+import { Pipe, PipeTransform } from '@angular/core';
 @NgModule({
   declarations: [
     OrderListComponent,

@@ -1,15 +1,25 @@
 
 <div class="card mt-5 mb-5 p-5 bg-body-secondary text-body-primary shadow-lg rounded-lg" style="display:block; margin:auto; width: 80%; max-width: 800px; min-width: 300px; align-self: center; justify-self: center;">
 <div class="card-header bg-body-secondary text-body-primary font-weight-bold">
-  
-    <div class="relative mb-12" style="z-index: 99">
-        <button
-          class="absolute top-0 right-0 w-auto btn"
-          [routerLink]="['../order/create', 0]"
-        >
-          <span>Crear</span>
-        </button>
-      </div>
+    <!-- <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="onSearch()" 
+    class="form-control mb-3 icon icon-search"
+    placeholder="Search by name, date, etc..."
+        
+  /> -->
+
+  <!-- <input type="text" [(ngModel)]="searchTerm" placeholder="Search..." class="form-control" /> -->
+  <!-- <div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for Customer Name">
+  </div> -->
+
+</div>
+<div>
+<input [(ngModel)]="searchTerm" placeholder="Search..." class="form-control" />
+<br>
+</div>
 <table class="table table-striped table-bordered table-hover table-sm table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
     <thead class="thead-dark ">
       <tr >
@@ -23,28 +33,38 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let customer of customers | paginate: { itemsPerPage: 5, currentPage: q }">
+      <tr *ngFor="let customer of filteredCustomers()  | paginate: { itemsPerPage: 20, currentPage: q }">
+        <!-- <tr *ngFor="let customer of customers | filter:searchText | paginate: { itemsPerPage: 5, currentPage: q }"> -->
+       
         <td>{{ customer.customerName }}</td>
         <td>{{ customer.lastOrderDate }}</td>
         <td>{{ customer.nextPredictedOrder }}</td>
         <td></td>
         <td>
           <span class="ml-1 vertical-align-middle cursor-pointer">
-            <a class="primary" [routerLink]="['../order', customer.custId]">Orders</a>
+            <a class="primary" [routerLink]="['../order', customer.custId,customer.customerName]">Orders</a>
           </span>
         </td>
         <td>
             <span class="ml-1 vertical-align-middle cursor-pointer">
-              <a class="primary" [routerLink]="['../order/create', customer.custId]">New</a>
+              <a class="primary" [routerLink]="['../order/create', customer.custId,customer.customerName]">New</a>
               <!-- <a class="primary" [routerLink]="['../order/create']">New</a> -->
             </span>
           </td>
       </tr>
-      <pagination-controls (pageChange)="q = $event"></pagination-controls>
+      
     </tbody>
   </table>
   
+  <pagination-controls (pageChange)="q = $event"></pagination-controls>
 
+  <!-- <pagination-controls 
+  [id]="'custom'"
+  [totalItems]="totalItems"
+  [itemsPerPage]="pageSize"
+  [(page)]="currentPage"
+  [maxSize]="5" 
+  [responsive]="true">
+</pagination-controls> -->
   </div>
 
-</div>
