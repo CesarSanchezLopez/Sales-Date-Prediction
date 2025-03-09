@@ -12,5 +12,9 @@ namespace SalesDatePrediction.Core.Interfaces
     {
       //  Task<List<Order>> GetAll();
         Task<List<Order>> GetCustId(int id);
+
+        Task<int> Post(Order product);
+
+
     }
 }

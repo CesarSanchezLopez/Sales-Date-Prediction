@@ -1,0 +1,179 @@
+<p>form-order works!</p>
+<div class="card mt-5 mb-5 p-5 bg-body-secondary text-body-primary shadow-lg rounded-lg" style="display:block; margin:auto; width: 80%; max-width: 800px; min-width: 300px; align-self: center; justify-self: center;">
+    <div class="card-header bg-body-secondary text-body-primary font-weight-bold">
+      
+
+
+
+<!-- <form [formGroup]="orderForm" (ngSubmit)="onSubmit()"> -->
+    <form [formGroup]="orderForm">
+    <h3>Order</h3>
+    <!-- <div class="form-group">
+      <label for="orderId">Order ID</label>
+      <input type="number" id="orderId" formControlName="orderId" class="form-control" />
+      <div *ngIf="orderForm.get('orderId')?.invalid && orderForm.get('orderId')?.touched" class="text-danger">
+        Order ID is required.
+      </div>
+    </div> -->
+
+    <div class="row">
+    <div class="form-group col-md-6">
+        <label for="listEmployes">Employee*</label>
+        <!-- <input type="number" id="empId" formControlName="empId" class="form-control" /> -->
+        <select
+        formControlName="listEmployes">
+        <option *ngFor="let doc of listEmployes" [value]="doc.empId">
+          {{ doc.fullName }}
+        </option>
+      </select>
+        <div *ngIf="orderForm.get('listEmployes')?.invalid && orderForm.get('listEmployes')?.touched" class="text-danger">
+            Employee is required.
+        </div>
+        
+      </div>
+      <div class="form-group col-md-6">
+        <label for="shipperId">Shipper*</label>
+        <!-- <input type="number" id="shipperId" formControlName="shipperId" class="form-control" /> -->
+        <select
+        formControlName="listShipper">
+        <option *ngFor="let doc of listShipper" [value]="doc.shipperId">
+          {{ doc.companyName }}
+        </option>
+      </select>
+        <div *ngIf="orderForm.get('listShipper')?.invalid && orderForm.get('listShipper')?.touched" class="text-danger">
+            shipperId is required.
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-12">
+        <label for="shipName">Ship Name*</label>
+        <input type="text" id="shipName" formControlName="shipName" class="form-control" />
+        <div *ngIf="orderForm.get('shipName')?.invalid && orderForm.get('shipName')?.touched" class="text-danger">
+            shipName is required.
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="form-group col-md-4">
+        <label for="shipAddress">Ship Address*</label>
+        <input type="text" id="shipAddress" formControlName="shipAddress" class="form-control" />
+        <div *ngIf="orderForm.get('shipAddress')?.invalid && orderForm.get('shipAddress')?.touched" class="text-danger">
+            shipName is required.
+        </div>
+        
+      </div>
+      <div class="form-group col-md-4">
+        <label for="shipCity">Ship City*</label>
+        <input type="text" id="shipCity" formControlName="shipCity" class="form-control" />
+        <div *ngIf="orderForm.get('shipCity')?.invalid && orderForm.get('shipCity')?.touched" class="text-danger">
+            Ship City is required.
+        </div>
+       </div>
+      <div class="form-group col-md-4">
+        <label for="shipCountry">Ship Country*</label>
+        <input type="text" id="shipCountry" formControlName="shipCountry" class="form-control" />
+        <div *ngIf="orderForm.get('shipCountry')?.invalid && orderForm.get('shipCountry')?.touched" class="text-danger">
+          Ship Country is required.
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="form-group col-md-4">
+        <label for="orderDate">Order Date</label>
+        <input type="date" id="orderDate" formControlName="orderDate" class="form-control" />
+        <div *ngIf="orderForm.get('orderDate')?.invalid && orderForm.get('orderDate')?.touched" class="text-danger">
+          Order Date is required.
+        </div>
+      </div>
+    <div class="form-group col-md-4">
+      <label for="requiredDate">Required Date*</label>
+      <input type="date" id="requiredDate" formControlName="requiredDate" class="form-control" />
+      <div *ngIf="orderForm.get('requiredDate')?.invalid && orderForm.get('requiredDate')?.touched" class="text-danger">
+          Ship City is required.
+      </div>
+     </div>
+    <div class="form-group col-md-4">
+      <label for="shippedDate">Ship Date*</label>
+      <input type="date" id="shippedDate" formControlName="shippedDate" class="form-control" />
+      <div *ngIf="orderForm.get('shippedDate')?.invalid && orderForm.get('shippedDate')?.touched" class="text-danger">
+        Ship Country is required.
+      </div>
+  </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-12">
+      <label for="freight">$ Freight*</label>
+      <input type="number" id="freight" formControlName="freight" class="form-control" />
+      <div *ngIf="orderForm.get('freight')?.invalid && orderForm.get('freight')?.touched" class="text-danger">
+        Freight is required.
+      </div>
+      
+    </div>
+  </div>
+
+    <!-- <div class="form-group">
+      <label for="custId">Customer ID</label>
+      <input type="number" id="custId" formControlName="custId" class="form-control" />
+      <div *ngIf="orderForm.get('custId')?.invalid && orderForm.get('custId')?.touched" class="text-danger">
+        Customer ID is required and must be a positive number.
+      </div>
+    </div>
+   -->
+    
+  
+    <!-- Add other fields for requiredDate, shippedDate, freight, etc. in similar way -->
+  
+    <h3>Order Detail</h3>
+    <div class="row">
+    <div class="form-group">
+       
+        <label for="productId">Product ID</label>
+        <select
+        formControlName="listProduct">
+        <option *ngFor="let doc of listProduct" [value]="doc.productId">
+          {{ doc.productName }}
+        </option>
+      </select>
+        <div *ngIf="orderForm.get('listProduct')?.invalid && orderForm.get('listProduct')?.touched" class="text-danger">
+          Product ID is required and must be a positive number.
+        </div>
+    </div>
+</div>
+  <div class="row">
+    <div class="form-group  col-md-4">
+      <label for="unitPrice">$ Unit Price*</label>
+      <input type="number" id="unitPrice" formControlName="unitPrice" class="form-control" />
+      <div *ngIf="orderForm.get('unitPrice')?.invalid && orderForm.get('unitPrice')?.touched" class="text-danger">
+        Unit Price is required and must be a positive number.
+      </div>
+      </div>
+     
+        <div class="form-group  col-md-4">
+            <label for="qty">Quantity*</label>
+            <input type="number" id="qty" formControlName="qty" class="form-control" />
+            <div *ngIf="orderForm.get('qty')?.invalid && orderForm.get('qty')?.touched" class="text-danger">
+                qty is required and must be a positive number.
+            </div>
+            </div>
+            <div class="form-group  col-md-4">
+                <label for="discount">Discount*</label>
+                <input type="number" id="discount" formControlName="discount" class="form-control" />
+                <div *ngIf="orderForm.get('discount')?.invalid && orderForm.get('discount')?.touched" class="text-danger">
+                    discount is required and must be a positive number.
+                </div>
+                </div>
+ </div>
+    <!-- Add other fields for qty and discount in similar way -->
+    <button class="btn btn-primary" (click)="goBack()">Back</button>
+    <button class="btn btn-primary" type="button" (click)="addOrder()">Save</button>
+    <!-- <button type="submit" [disabled]="orderForm.invalid" class="btn btn-primary">Submit</button> -->
+  </form>
+
+</div>
+</div>

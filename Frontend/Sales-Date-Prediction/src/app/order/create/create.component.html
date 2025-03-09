@@ -1,0 +1,22 @@
+<div class="order-create">
+    <h2>Create Order</h2>
+    <form (ngSubmit)="createOrder()">
+      <!-- Add input fields for each property in IOrder -->
+      <label for="custId">Customer ID:</label>
+      <input id="custId" [(ngModel)]="newOrder.custId" name="custId" required />
+  
+      <label for="orderDate">Order Date:</label>
+      <input id="orderDate" [(ngModel)]="newOrder.orderDate" name="orderDate" required />
+  
+      <label for="requiredDate">Required Date:</label>
+      <input id="requiredDate" [(ngModel)]="newOrder.requiredDate" name="requiredDate" required />
+  
+      <label for="shippedDate">Shipped Date:</label>
+      <input id="shippedDate" [(ngModel)]="newOrder.shippedDate" name="shippedDate" required />
+  
+      <label for="shipName">Ship Name:</label>
+      <input id="shipName" [(ngModel)]="newOrder.shipName" name="shipName" required />
+  
+      <button type="submit">Create Order</button>
+    </form>
+  </div>

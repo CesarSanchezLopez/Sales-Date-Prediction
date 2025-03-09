@@ -15,7 +15,7 @@ namespace SalesDatePrediction.Api.Controllers
             _productRepository = productRepository;
         }
 
-       
+        
         [HttpGet]
         public async Task<List<Product>> GetAll()
         {

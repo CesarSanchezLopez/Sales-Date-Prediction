@@ -22,5 +22,13 @@ namespace SalesDatePrediction.Api.Controllers
         {
             return await _OrderRepository.GetCustId(id);
         }
+
+        [HttpPost] 
+        public async Task<int> Post(Order order)
+        {
+            return await _OrderRepository.Post(order);
+        }
+        
+
     }
 }
