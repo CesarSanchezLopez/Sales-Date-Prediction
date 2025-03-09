@@ -1,6 +1,6 @@
 # Sales-Date-Prediction
 
-************Frontend Anular******************
+************Frontend Angular******************
 ### Instalación
 
 1. **Clonar el repositorio**:
